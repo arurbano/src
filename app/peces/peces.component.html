@@ -1,0 +1,41 @@
+<h3>Listado de especies en el acuario</h3>
+<a class="btn btn-primary float-md-right" id="añadir" routerLink="/addpez">Añadir nueva especie</a>
+<br>
+<table class="table table-bordered table-striped tabla" >
+  <thead>
+    <tr class="filters">
+      <th>Reino</th>
+      <th>Especie</th>
+      <th>Familia</th>
+      <th>Edad(en meses)</th>
+      <th>Sexo</th>
+      <th>Hábitat</th>
+      <th>Nutrición</th>
+      <th>Eliminar</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let peces of peces">
+      <td>{{ peces.reino }}</td>
+      <td>{{ peces.especie }}</td>
+      <td>{{ peces.familia }}</td>
+      <td>{{ peces.edad }}</td>
+      <td>{{ peces.sexo }}</td>
+      <td>{{ peces.habitat }}</td>
+      <td>{{ peces.nutricion }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="onDelete(peces.$key)">Liberar</button>
+      </td>
+      <audio autoplay src="./assets/music/Home.mp3"></audio> 
+      <td>
+        <button type="button" class="btn btn-success" routerLink="/editpez/{{ peces.$key }}" (click)="pecesService.rellenar(peces)">Actualizar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">
+  Liberación realizada con éxito.
+</div>
+
+

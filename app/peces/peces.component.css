@@ -1,0 +1,17 @@
+.table{
+  margin-top:40px;
+  margin-left: 0.5%;
+  background-color: white;  
+  color: #043463;
+  width: 99%;
+}
+#añadir{
+    margin-right: 15%;
+    background-color: #1874d2;
+    color: black;
+}
+.h3{
+  padding: 40px;
+  margin:40px;
+}
+

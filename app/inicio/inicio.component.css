@@ -1,0 +1,42 @@
+
+#medusa1{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 320px;
+    height: 520px;
+    margin:-60px 0 0 -10px;
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+}
+
+#medusa2 {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    width: 320px;
+    height: 320px;
+    margin:-60px 0 0 -60px;
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+}
+
+#medusa3 {
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    width: 320px;
+    height: 320px;
+    margin:-60px 0 0 -60px;
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+}
+
+@-webkit-keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}

@@ -1,0 +1,23 @@
+#header{
+    background-color: #ffffff;
+}
+
+#appquarium{
+    color: #1874d2;
+    font-size: xx-large;
+}
+#item{
+    color: #1874d2;
+    font-size: large;
+}
+
+.btn{
+    color: white;
+    background-color:#043463;
+}
+
+#loading{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}

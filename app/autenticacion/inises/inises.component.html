@@ -1,0 +1,26 @@
+<ul></ul> 
+<div class="row">
+  <audio autoplay src="./assets/music/Blop.mp3"></audio>
+  <div class="col-md-6 offset-md-3">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h4>Introduzca los siguientes datos:</h4>
+      <label>Correo Electrónico</label>
+      <input type="email" id="inputEmail" class="form-control" formControlName="email" required autofocus>
+      <ul></ul> 
+      <label>Contraseña</label>
+      <input type="password" id="inputPassword" class="form-control" formControlName="password" required>
+      <ul></ul> 
+      <button type="submit" class="btn btn-primary" id="inicio" [disabled]="!loginForm.valid">Iniciar sesión</button>
+      <ul></ul> 
+      <button class="btn btn-block btn-social btn-google" id="google" (click)='llamarGoogle()' >
+        <span class="fa fa-google"></span> Sign in with Google
+      </button>
+    </form>
+    <ul></ul> 
+    <p class="alert alert-danger" *ngIf="mensaje">
+      El usuario o contraseña no es correcto
+    </p>
+    <ul></ul> 
+    <p>Si no dispone de cuenta pulse <a routerLink="/registro">aquí</a></p>
+  </div>
+</div>

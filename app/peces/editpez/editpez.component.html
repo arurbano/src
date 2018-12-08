@@ -1,0 +1,124 @@
+<div class="row">
+  <audio autoplay src="./assets/music/Shop.mp3"></audio>
+<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset 2">
+  <h2>Actualizando la especie seleccionada</h2>
+  <a class="btn btn-primary float-md-right" routerLink="/peces">Regresar al acuario</a>
+  <br>
+  <form [formGroup]="this.pecesService.form"  (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="reino">Reino</label> &nbsp;
+      <i class="fa fa-check-circle check" *ngIf="this.pecesService.form.controls.reino.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="this.pecesService.form.controls.reino.invalid &&
+      this.pecesService.form.controls.reino.touched"></i>
+      <select class="form-control" id="reino" formControlName="reino">
+        <option value="">Seleccione...</option>
+        <option value=animales>Animalia</option>
+        <option value=plantas>Plantae</option>
+      </select>
+      <p class="alert alert-danger" *ngIf="this.pecesService.form.controls.reino.invalid &&
+      this.pecesService.form.controls.reino.touched">
+        El campo reino es obligatorio.
+      </p>
+    </div>
+
+<div class="form-group">
+      <label for="especie">Especie</label>&nbsp;
+      <i class="fa fa-check-circle check" *ngIf="this.pecesService.form.controls.especie.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="this.pecesService.form.controls.especie.invalid &&
+      this.pecesService.form.controls.especie.touched"></i>
+      <input type="text" class="form-control" id="especie" formControlName="especie">
+      <p class="alert alert-danger" *ngIf="this.pecesService.form.controls.especie.invalid &&
+      this.pecesService.form.controls.especie.touched">
+        El campo especie es obligatorio.
+      </p>
+    </div>
+
+
+    <div class="form-group">
+      <label for="familia">Familia</label>&nbsp;
+      <i class="fa fa-check-circle check" *ngIf="this.pecesService.form.controls.familia.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="this.pecesService.form.controls.familia.invalid &&
+      this.pecesService.form.controls.familia.touched"></i>
+      <input type="text" class="form-control" id="familia" formControlName="familia">
+      <p class="alert alert-danger" *ngIf="this.pecesService.form.controls.familia.invalid &&
+      this.pecesService.form.controls.familia.touched">
+        El campo familia es obligatorio.
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label for="concepto">Edad(en meses)</label>&nbsp;
+      <i class="fa fa-check-circle check" *ngIf="this.pecesService.form.controls.edad.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="this.pecesService.form.controls.edad.invalid &&
+      this.pecesService.form.controls.edad.touched"></i>
+      <input type="number" class="form-control" id="edad" formControlName="edad">
+      <p class="alert alert-danger" *ngIf="this.pecesService.form.controls.edad.invalid &&
+      this.pecesService.form.controls.edad.touched">
+        El campo edad es obligatorio.
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label for="sexo">Sexo</label>&nbsp;
+      <i class="fa fa-check-circle check" *ngIf="this.pecesService.form.controls.sexo.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="this.pecesService.form.controls.sexo.invalid &&
+      this.pecesService.form.controls.sexo.touched"></i>
+      <select class="form-control" id="sexo" formControlName="sexo">
+        <option value="">Seleccione...</option>
+        <option value=macho>Macho</option>
+        <option value=hembra>Hembra</option>
+        <option value=hermafrodita>Hermafrodita</option>
+        <option value=asexual>Asexual</option>
+      </select>
+      <p class="alert alert-danger" *ngIf="this.pecesService.form.controls.sexo.invalid &&
+      this.pecesService.form.controls.sexo.touched">
+        El campo sexo es obligatorio.
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label for="habitat">Habitat Natural</label>&nbsp;
+      <i class="fa fa-check-circle check" *ngIf="this.pecesService.form.controls.habitat.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="this.pecesService.form.controls.habitat.invalid &&
+      this.pecesService.form.controls.habitat.touched"></i>
+      <select class="form-control" id="habitat" formControlName="habitat">
+        <option value="">Seleccione...</option>
+        <option value=salada>Agua salada</option>
+        <option value=dulce>Agua dulce</option>
+        <option value=salobre>Aguas salobres</option>
+      </select>
+      <p class="alert alert-danger" *ngIf="this.pecesService.form.controls.habitat.invalid &&
+      this.pecesService.form.controls.habitat.touched">
+        El campo habitat es obligatorio.
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label for="nutricion">Tipo de nutrición</label>&nbsp;
+      <i class="fa fa-check-circle check" *ngIf="this.pecesService.form.controls.nutricion.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="this.pecesService.form.controls.nutricion.invalid &&
+      this.pecesService.form.controls.nutricion.touched"></i>
+      <select class="form-control" id="nutricion" formControlName="nutricion">
+        <option value="">Seleccione...</option>
+        <option value=herbivoro>Herbívora</option>
+        <option value=carnivoro>Carnívora</option>
+        <option value=omnivoro>Omnívora</option>
+        <option value=otro>Otras</option>
+      </select>
+      <p class="alert alert-danger" *ngIf="this.pecesService.form.controls.nutricion.invalid &&
+      this.pecesService.form.controls.nutricion.touched">
+        El campo nutricion es obligatorio.
+      </p>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!this.pecesService.form.valid" (click)="guardarCambios()">Guardar Cambios</button>
+    
+    <ul></ul>
+    
+    <p class="alert alert-danger" *ngIf="!this.pecesService.form.valid">
+      Por favor complete todos los campos
+    </p>
+  </form>
+</div>
+</div>
